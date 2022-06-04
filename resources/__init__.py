@@ -3,13 +3,15 @@ from .extensions import mongo
 import os
 from flask_login import LoginManager
 
+MONGODB_URI = os.environ['MONGODB_URI']
+
 def create_app():
 
     app = Flask(__name__)
     app.config['SECRET_KEY'] = '6ab8eca495edfc8b82706e937cb3cdf82a4392af14705543c9b06e8118342f71'
     app.config['MONGODB_SETTINGS'] = {
     'db': 'test_db',
-    'host': os.getenv('MONGODB_HOST', 'localhost:27017'),
+    'host': MONGODB_URI,
     }
 
     mongo.init_app(app)
