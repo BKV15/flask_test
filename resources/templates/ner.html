@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+    <div class="container mb-3">
+
+        <h1 align="center">NER(Persian Text)</h1>
+
+        <ul dir="rtl" class="list-group list-group-flush">
+            {% for note in user.notes %}
+                <li class="list-group-item">
+                    {{ note.text }}
+                    <button type="button" class="btn-close float-start" onclick="deleteNote('{{note.id}}')"></button>
+                    <ul class="list-group list-group-flush">
+                        {% for entity in note.entities%}
+                            <li class="list-group-item">
+                                <p>{{ entity.word }} -- > {{ entity.entity }}</p>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <form method="POST">
+            <div class="mb-3">
+                <textarea class="form-control" name="note" id="note" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-primary" type="submit">Post</button>
+            </div>
+        </form>
+
+    </div>
+
+    <script type="text/javascript" src="{{url_for('static' , filename='index.js')}}"></script>
+{% endblock %}

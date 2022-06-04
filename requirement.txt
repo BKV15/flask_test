@@ -1,0 +1,6 @@
+flask
+flask-login
+flask-mongoengine
+requests
+mongoengine
+gunicorn

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Sign up{% endblock %}
+{% block content %}
+<div class="col-md-10 mx-auto col-lg-5">
+    <h1 align="center">Sign up form</h1>
+    <form class="p-4 p-md-5 border rounded-3 bg-light" method="POST">
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+            <label for="email">Email address</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="name" name="name" placeholder="name@example.com">
+            <label for="name">Name</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="password1" name="password1" placeholder="Password">
+            <label for="password1">Password</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="password2" name="password2" placeholder="Password">
+            <label for="password2">Confirm password</label>
+        </div>
+        <button type="submit" class="w-100 btn btn-lg btn-primary">Sign Up</button>
+        <hr class="my-4">
+        <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}ASR{% endblock %}
+{% block content %}
+<div class="col-md-10 mx-auto col-lg-5">
+    <h1 align="center">Upload Your File (English Sample)</h1>
+    {% if transcript %}
+        <p>{{ transcript }}</p>
+    {% endif %}
+    <form class="p-4 p-md-5 border rounded-3 bg-light" enctype="multipart/form-data" method="POST">
+        <div class="mb-3">
+            <label for="audio" class="form-label">Audio File</label>
+            <input type="file" class="form-control" id="audio" name="audio">
+        </div>
+        <button type="submit" class="btn btn-lg btn-primary">Send</button>
+    </form>
+</div>
+{% endblock %}
