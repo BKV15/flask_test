@@ -1,15 +1,15 @@
-import json
+import json , os
 import requests
 
 
-API_TOKEN = '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'
+API_TOKEN = os.environ['API_TOKEN']
 headers = {"Authorization": f"Bearer {API_TOKEN}"}
 
-API_URL = 'https://api-inference.huggingface.co/models/BK-V/xlm-roberta-base-finetuned-arman-fa'
+API_URL_NER = 'https://api-inference.huggingface.co/models/BK-V/xlm-roberta-base-finetuned-arman-fa'
 def query_ner(payload):
 
     data = json.dumps(payload)
-    response = requests.request("POST", API_URL, headers=headers, data=data)
+    response = requests.request("POST", API_URL_NER, headers=headers, data=data)
     return json.loads(response.content.decode("utf-8")) , response.status_code
 
 

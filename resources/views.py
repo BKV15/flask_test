@@ -79,12 +79,3 @@ def audio_processing():
         return render_template('asr.html' , user=current_user , transcript=output['text'])
 
     return render_template('asr.html' , user=current_user , transcript=None)
-
-
-# @views.route('/test')
-# def test():
-
-#     text = {'inputs' : 'شهر مشهد بهترین مکان ممکن برای علی',}
-#     res = query(text)
-#     print(res)
-#     return f'<h1>{res}<h1/>'
